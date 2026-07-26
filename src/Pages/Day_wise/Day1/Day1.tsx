@@ -1,5 +1,6 @@
 import { useRef, useState, type ReactNode } from "react";
 import "./Day1.scss";
+import { Minus, Plus } from "lucide-react";
 
 const CodeBlock = ({ code, label }: { code: string; label?: string }) => (
   <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900">
@@ -129,10 +130,10 @@ const CounterToggleDemo = () => {
         <span className="text-base text-slate-100">Count: {count}</span>
         <div className="flex gap-2">
           <button
-            onClick={() => setCount((prev) => prev - 1)}
+            onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : prev))}
             className="rounded-md bg-slate-800 px-3 py-1.5 text-sm font-medium text-slate-100 hover:bg-slate-700"
           >
-            -1
+            <Minus />
           </button>
           <button
             onClick={() => setCount(0)}
@@ -144,7 +145,7 @@ const CounterToggleDemo = () => {
             onClick={() => setCount((prev) => prev + 1)}
             className="rounded-md bg-sky-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-sky-500"
           >
-            +1
+            <Plus />
           </button>
         </div>
       </div>
@@ -171,7 +172,7 @@ const CounterToggleDemo = () => {
 
 const Day1 = () => {
   return (
-    <div className="mx-auto max-w-3xl space-y-10 pb-16">
+    <div className="mx-auto px-5 space-y-10 pb-16">
       <header className="space-y-2">
         <p className="text-sm font-semibold uppercase tracking-wider text-sky-400">
           Day 1
