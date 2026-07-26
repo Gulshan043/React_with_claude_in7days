@@ -1,4 +1,4 @@
-import { Home, Rocket } from "lucide-react";
+import { BookOpen, Home, Rocket } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const linkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -22,12 +22,20 @@ const Navbar = () => {
           </span>
         </NavLink>
 
-        <NavLink to="/" end className={linkClasses}>
-          <span className="flex items-center gap-1.5">
-            <Home className="h-4 w-4" />
-            Home
-          </span>
-        </NavLink>
+        <div className="flex items-center gap-2">
+          <NavLink to="/" end className={linkClasses}>
+            <span className="flex items-center gap-1.5">
+              <Home className="h-4 w-4" />
+              Home
+            </span>
+          </NavLink>
+          <NavLink to="/cheatsheet" className={linkClasses}>
+            <span className="flex items-center gap-1.5">
+              <BookOpen className="h-4 w-4" />
+              Cheatsheet
+            </span>
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
