@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Pages/Layout/Layout";
 import Home from "./Pages/Home/Home";
+import Syllabus from "./Pages/Syllabus/Syllabus";
 import Cheatsheet from "./Pages/Cheatsheet/Cheatsheet";
 import Day1 from "./Pages/Day_wise/Day1/Day1";
 import Day2 from "./Pages/Day_wise/Day2/Day2";
@@ -17,6 +18,7 @@ const App = () => {
       element: <Layout />,
       children: [
         { index: true, element: <Home /> },
+        { path: "syllabus", element: <Syllabus /> },
         { path: "cheatsheet", element: <Cheatsheet /> },
         { path: "day1", element: <Day1 /> },
         { path: "day2", element: <Day2 /> },
