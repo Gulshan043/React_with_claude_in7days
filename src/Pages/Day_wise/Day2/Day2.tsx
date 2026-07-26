@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import "./Day2.scss";
 
 const CodeBlock = ({ code, label }: { code: string; label?: string }) => (
@@ -145,9 +145,9 @@ const EffectTimingDemo = () => {
   const [mounted, setMounted] = useState(true);
   const [logs, setLogs] = useState<string[]>([]);
 
-  const addLog = (msg: string) => {
+  const addLog = useCallback((msg: string) => {
     setLogs((prev) => [...prev, msg]);
-  };
+  }, []);
 
   return (
     <div className="space-y-4 rounded-lg border border-slate-800 bg-slate-900 p-5">
