@@ -31,8 +31,8 @@ const days = [
     day: 3,
     path: "/day3",
     icon: Layers,
-    title: "Component Patterns & Composition",
-    blurb: "Reusable components, children props, composition over inheritance.",
+    title: "Advanced Hooks",
+    blurb: "useRef, useContext, useMemo, useCallback, useReducer.",
   },
   {
     day: 4,
